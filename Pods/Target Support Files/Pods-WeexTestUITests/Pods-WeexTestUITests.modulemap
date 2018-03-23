@@ -1,0 +1,6 @@
+framework module Pods_WeexTestUITests {
+  umbrella header "Pods-WeexTestUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

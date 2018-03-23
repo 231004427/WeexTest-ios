@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Hv2-fF-1hb">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Main View Controller-->
+        <scene sceneID="TsO-jC-Ush">
+            <objects>
+                <viewController id="2xb-2H-ZUz" customClass="MainViewController" customModule="WeexTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ckm-J4-z7l">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9n-p9-2tP">
+                                <rect key="frame" x="152" y="318" width="71" height="30"/>
+                                <state key="normal" title="打开WeeX"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="weex" id="g8T-5T-Chj"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="http://127.0.0.1:8081/dist/index.weex.js" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RwA-Yj-NBa">
+                                <rect key="frame" x="41" y="248" width="320" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="ImE-fR-tkd"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RwA-Yj-NBa" firstAttribute="centerX" secondItem="B9n-p9-2tP" secondAttribute="centerX" constant="13.5" id="3oN-3L-t7F"/>
+                            <constraint firstItem="B9n-p9-2tP" firstAttribute="centerY" secondItem="Ckm-J4-z7l" secondAttribute="centerY" id="KgA-ze-XaU"/>
+                            <constraint firstItem="B9n-p9-2tP" firstAttribute="centerX" secondItem="Ckm-J4-z7l" secondAttribute="centerX" id="YQV-DH-kk0"/>
+                            <constraint firstItem="RwA-Yj-NBa" firstAttribute="top" secondItem="xp6-qQ-O6x" secondAttribute="top" constant="184" id="eJk-Up-WNv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xp6-qQ-O6x"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xRc-Lg-qqE"/>
+                    <connections>
+                        <outlet property="urlTextFileld" destination="RwA-Yj-NBa" id="ViU-05-cah"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UzA-6D-yI9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1612" y="-799.2503748125938"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WeexTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hk0-Yo-dca">
+                        <barButtonItem key="rightBarButtonItem" title="刷新" id="dhl-aP-bDn"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-118" y="-758"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B6b-HZ-vc3">
+            <objects>
+                <navigationController id="Hv2-fF-1hb" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="4Br-zb-Tid">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="2xb-2H-ZUz" kind="relationship" relationship="rootViewController" id="mtu-Aw-LQI"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aXf-F9-Et2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2884" y="-759"/>
+        </scene>
+    </scenes>
+</document>
