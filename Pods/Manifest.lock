@@ -1,18 +1,21 @@
 PODS:
   - Kingfisher (4.6.3)
   - Starscream (3.0.4)
+  - SwiftyJSON (4.0.0)
   - WeexSDK (0.17.0)
 
 DEPENDENCIES:
   - Kingfisher (~> 4.6.1)
   - Starscream (~> 3.0.3)
+  - SwiftyJSON (~> 4.0.0)
   - WeexSDK (= 0.17.0)
 
 SPEC CHECKSUMS:
   Kingfisher: 98e6d5b5e807645743e8ed5ececd25d688d38452
   Starscream: f5da93fe6984c77b694366bf7299b7dc63a76f26
+  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
   WeexSDK: ad8443f4290ef7cb241bbd4c03b02d9dfc9fdca2
 
-PODFILE CHECKSUM: 8e16440ce9adc8c10120caa0940f86dccf62f974
+PODFILE CHECKSUM: 4963a2af9ea52ff44ae80090dfebca3e0f65f59c
 
 COCOAPODS: 1.3.1

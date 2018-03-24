@@ -18,6 +18,12 @@ class ViewController: UIViewController {
     var rColor:String?
     var rTag:Int?
     var rImg:String?
+    var isGet=true
+    var isLoading=false;
+   let restConn=RestConn()
+    var weexJSVesion:WeexJSVesion!
+    var path="/weex/js"
+    var filePath=""
     
     public func setRightItem(title:String?=nil,color:String?="",tag:Int?=0,img:String?=nil){
         rTitle=title
@@ -56,9 +62,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         top=64
         weexHeight = self.view.frame.size.height - top!;
-        render()
+        //右侧按钮
         buildRightItem(title: rTitle, color: rColor, tag: rTag, img: rImg)
+        //版本判断
+        getJSBundle()
         
+    }
+    func getJSBundle(){
+        if isLoading {return}
+        isLoading=true
+        //版本地址
+        var urlVesion=url
+        var num=url.positionOf(sub: "/", backwards: true)
+        for c in "v/v." {
+            num+=1
+            urlVesion.insert(c, at:url.index(url.startIndex, offsetBy:num))
+        }
+        //获取版本信息
+        restConn.restDelegate=self
+        restConn.get(urlStr: urlVesion)
     }
     override func viewDidAppear(_ animated: Bool) {
         updateInstanceState(state: WXState.WeexInstanceAppear)
@@ -103,7 +125,6 @@ class ViewController: UIViewController {
             instance!.destroy()
         }
         instance = WXSDKInstance()
-        instance?.reload(true)
         instance!.viewController = self
         let width = self.view.frame.size.width
         
@@ -129,6 +150,65 @@ class ViewController: UIViewController {
             (view:UIView!)-> Void in
             print("update finish")
         }
-        instance!.render(with: URL(string: self.url), options: ["bundleUrl":self.url], data: nil)
+        instance!.render(with: URL.init(string: String(format: "file://%@", self.filePath)), options: ["bundleUrl":self.url], data: nil)
     }
+    public func down(){
+        //判断文件是否存在
+        let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+        let documentPath = documentPaths[0]
+        let fileManager = FileManager.default
+        filePath=documentPath+path+"/"+weexJSVesion.fileName
+        if !fileManager.fileExists(atPath: filePath) {
+            isGet=true
+        }
+        if isGet {
+            isLoading=true
+            restConn.down(urlStr: url, fileName: weexJSVesion.fileName, path: path)
+        }else{
+            render()
+        }
+    }
+}
+extension ViewController:RestConnDelegate {
+    func onRequestSuccess(_ response: String?) {
+        if response=="down" {
+            //文件下载成功
+            render()
+        }else{
+            weexJSVesion=WeexJSVesion(jsonStr: response!)
+            if weexJSVesion != nil {
+                //获取本地版本
+                if let vesion=SharedData.getValue(key: weexJSVesion.fileName) {
+                if weexJSVesion.md5==vesion {
+                    isGet=false
+                }else{
+                    //更新版本号
+                    isGet=true
+                    SharedData.saveValue(versionCode: weexJSVesion.md5, key: weexJSVesion.fileName)
+                }
+                }else{
+                //更新版本号
+                isGet=true
+                SharedData.saveValue(versionCode: weexJSVesion.md5, key: weexJSVesion.fileName)
+                }
+                down()
+            }
+        }
+       isLoading=false
+    }
+    
+    func onRequestError(_ error: Error?) {
+        print("network error!")
+        let alertController = UIAlertController(title: "系统提示",
+                                                message: "网络异常", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "好的", style: .default, handler: {
+            action in
+            //
+        })
+        alertController.addAction(okAction)
+        self.present(alertController, animated: true, completion: nil)
+        isLoading=false
+    }
+    
+    
 }
