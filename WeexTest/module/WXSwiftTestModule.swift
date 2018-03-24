@@ -17,6 +17,6 @@ public extension WXSwiftTestModule {
     }
     @objc public func reload() {
         let vc=weexInstance.viewController as! ViewController
-        vc.render()
+        vc.getJSBundle()
     }
 }
