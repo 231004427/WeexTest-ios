@@ -6,9 +6,9 @@
 //  Copyright © 2018年 sunlin. All rights reserved.
 //
 
-#import "WXSwiftTestModule.h"
+#import "WXComModule.h"
 #import "WeexTest-Swift.h"
-@implementation WXSwiftTestModule
+@implementation WXComModule
 @synthesize weexInstance;
 #pragma clang diagnostic push //关闭unknow selector的warrning
 #pragma clang diagnostic ignored "-Wundeclared-selector"

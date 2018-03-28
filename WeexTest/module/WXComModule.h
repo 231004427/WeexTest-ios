@@ -6,12 +6,12 @@
 //  Copyright © 2018年 sunlin. All rights reserved.
 //
 
-#ifndef WXSwiftTestModule_h
-#define WXSwiftTestModule_h
+#ifndef WXComModule_h
+#define WXComModule_h
 
 #import <Foundation/Foundation.h>
 #import <WeexSDK/WeexSDK.h>
-@interface WXSwiftTestModule : NSObject <WXModuleProtocol>
+@interface WXComModule : NSObject <WXModuleProtocol>
 @end
 
 #endif /* WXSwiftTestModule_h */

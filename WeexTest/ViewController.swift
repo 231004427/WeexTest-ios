@@ -13,11 +13,14 @@ class ViewController: UIViewController {
     var weexView = UIView()
     var weexHeight:CGFloat?
     var top:CGFloat?
-    var url="http://127.0.0.1:8081/dist/index.weex.js"
+    var url=""
     var rTitle:String?
     var rColor:String?
     var rTag:Int?
     var rImg:String?
+    /////////////////////
+    var isCatch=false
+    /////////////////////
     var isGet=true
     var isLoading=false;
    let restConn=RestConn()
@@ -64,8 +67,12 @@ class ViewController: UIViewController {
         weexHeight = self.view.frame.size.height - top!;
         //右侧按钮
         buildRightItem(title: rTitle, color: rColor, tag: rTag, img: rImg)
-        //版本判断
-        getJSBundle()
+        if isCatch {
+            //JS版本判断
+            getJSBundle()
+        }else{
+            render()
+        }
         
     }
     func getJSBundle(){
@@ -150,9 +157,15 @@ class ViewController: UIViewController {
             (view:UIView!)-> Void in
             print("update finish")
         }
-        instance!.render(with: URL.init(string: String(format: "file://%@", self.filePath)), options: ["bundleUrl":self.url], data: nil)
+        if isCatch {
+            instance!.render(with: URL.init(string: String(format: "file://%@", self.filePath)), options: ["bundleUrl":self.url], data: nil)
+        }else{
+            instance!.render(with: URL.init(string: self.url), options: ["bundleUrl":self.url], data: nil)
+        }
+
     }
     public func down(){
+        if isLoading {return}
         //判断文件是否存在
         let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
         let documentPath = documentPaths[0]
@@ -163,7 +176,7 @@ class ViewController: UIViewController {
         }
         if isGet {
             isLoading=true
-            restConn.down(urlStr: url, fileName: weexJSVesion.fileName, path: path)
+            restConn.get(urlStr: url)
         }else{
             render()
         }
@@ -171,9 +184,23 @@ class ViewController: UIViewController {
 }
 extension ViewController:RestConnDelegate {
     func onRequestSuccess(_ response: String?) {
-        if response=="down" {
-            //文件下载成功
+        if isGet {
+            //文件下载
+            //操作文件
+            let documentPaths = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true)
+            let documentPath = documentPaths[0]
+            let fileManager = FileManager.default
+            let mydir = documentPath+path
+            do {
+                try fileManager.createDirectory(atPath: mydir, withIntermediateDirectories: true, attributes: nil)
+                try response!.write(toFile: mydir+"/"+weexJSVesion.fileName, atomically: true, encoding: String.Encoding.utf8)
+            }catch{
+                 print("down at error: %@", error)
+                isLoading=false
+            }
+            
             render()
+            isLoading=false
         }else{
             weexJSVesion=WeexJSVesion(jsonStr: response!)
             if weexJSVesion != nil {
@@ -184,17 +211,17 @@ extension ViewController:RestConnDelegate {
                 }else{
                     //更新版本号
                     isGet=true
-                    SharedData.saveValue(versionCode: weexJSVesion.md5, key: weexJSVesion.fileName)
+                    SharedData.saveValue(value: weexJSVesion.md5, key: weexJSVesion.fileName)
                 }
                 }else{
                 //更新版本号
                 isGet=true
-                SharedData.saveValue(versionCode: weexJSVesion.md5, key: weexJSVesion.fileName)
+                SharedData.saveValue(value: weexJSVesion.md5, key: weexJSVesion.fileName)
                 }
+                isLoading=false
                 down()
             }
         }
-       isLoading=false
     }
     
     func onRequestError(_ error: Error?) {

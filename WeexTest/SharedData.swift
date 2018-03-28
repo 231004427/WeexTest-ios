@@ -8,9 +8,9 @@
 
 import Foundation
 class SharedData {
-    public static func saveValue(versionCode:String,key:String) {
+    public static func saveValue(value:String,key:String) {
         let defaults = UserDefaults.standard
-        defaults.set(versionCode, forKey: key)
+        defaults.set(value, forKey: key)
         defaults.synchronize()
     }
     public static func getValue(key:String)->String?{

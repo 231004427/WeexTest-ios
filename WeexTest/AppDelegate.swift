@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         WXSDKEngine.registerHandler(WxImageDownloader(), with: WXImgLoaderProtocol.self)
         WXSDKEngine.registerHandler(WXNavigationHandlerImpl(), with: WXNavigationProtocol.self)
         WXSDKEngine.registerHandler(WXWebSocketHandlerImpl(), with: WXWebSocketHandler.self)
-        WXSDKEngine.registerModule("ComModule", with: NSClassFromString("WXSwiftTestModule"))
+        WXSDKEngine.registerModule("ComModule", with: NSClassFromString("WXComModule"))
         WXSDKEngine.registerModule("titleBar", with: NSClassFromString("WXTitleBarModule"))
         WXSDKEngine.registerComponent("richtext", with:  NSClassFromString("WXDivExtraComponent"))
         return true
