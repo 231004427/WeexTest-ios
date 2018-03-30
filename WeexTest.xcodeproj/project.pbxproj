@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2EBDDA592DD19FD7FCCEE780 /* Pods_WeexTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D57D0FB0EA070AF1677D645 /* Pods_WeexTestUITests.framework */; };
 		A51D7F3127573D95DAFED102 /* Pods_WeexTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD044090184473F50F3907F /* Pods_WeexTestTests.framework */; };
+		BB04B552206D0A6000C6AF10 /* WXActionSheetModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BB04B551206D0A6000C6AF10 /* WXActionSheetModule.m */; };
 		BB1B30B82063DD9300219FFF /* WXDivExtraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB1B30B52063DD9200219FFF /* WXDivExtraComponent.swift */; };
 		BB1B30B92063DD9300219FFF /* WXDivExtraComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1B30B72063DD9300219FFF /* WXDivExtraComponent.m */; };
 		BB1F1862204A39EA0066F7D8 /* WXComModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1F1861204A39EA0066F7D8 /* WXComModule.m */; };
@@ -65,6 +66,8 @@
 		AAD16C5BF333950D0BD46643 /* Pods-WeexTestUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexTestUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeexTestUITests/Pods-WeexTestUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B43BB3001F8E0AE77CC74C49 /* Pods-WeexTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeexTest/Pods-WeexTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B8E563A5012DE71525257AE4 /* Pods-WeexTestUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeexTestUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeexTestUITests/Pods-WeexTestUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		BB04B550206D0A2700C6AF10 /* WXActionSheetModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXActionSheetModule.h; sourceTree = "<group>"; };
+		BB04B551206D0A6000C6AF10 /* WXActionSheetModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXActionSheetModule.m; sourceTree = "<group>"; };
 		BB1B30B52063DD9200219FFF /* WXDivExtraComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WXDivExtraComponent.swift; sourceTree = "<group>"; };
 		BB1B30B62063DD9300219FFF /* WXDivExtraComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXDivExtraComponent.h; sourceTree = "<group>"; };
 		BB1B30B72063DD9300219FFF /* WXDivExtraComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXDivExtraComponent.m; sourceTree = "<group>"; };
@@ -235,6 +238,8 @@
 				BB1F1861204A39EA0066F7D8 /* WXComModule.m */,
 				BB1F1863204A3A3E0066F7D8 /* WXComModule.swift */,
 				BBA354F220649656001EF60F /* WXTitleBarModule.swift */,
+				BB04B550206D0A2700C6AF10 /* WXActionSheetModule.h */,
+				BB04B551206D0A6000C6AF10 /* WXActionSheetModule.m */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -556,6 +561,7 @@
 				BB94EE1B205CB32E00214885 /* MainViewController.swift in Sources */,
 				BB1F1862204A39EA0066F7D8 /* WXComModule.m in Sources */,
 				BB7C3A8720661C0700894A6F /* RestConn.swift in Sources */,
+				BB04B552206D0A6000C6AF10 /* WXActionSheetModule.m in Sources */,
 				BB9B378520490E9B00A324B1 /* WxImageDownloader.swift in Sources */,
 				BB3BF04F2046B63E00F3A520 /* ViewController.swift in Sources */,
 				BB3BF04D2046B63E00F3A520 /* AppDelegate.swift in Sources */,

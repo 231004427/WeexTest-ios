@@ -29,6 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         WXSDKEngine.registerHandler(WXWebSocketHandlerImpl(), with: WXWebSocketHandler.self)
         WXSDKEngine.registerModule("ComModule", with: NSClassFromString("WXComModule"))
         WXSDKEngine.registerModule("titleBar", with: NSClassFromString("WXTitleBarModule"))
+        WXSDKEngine.registerModule("actionSheet", with: NSClassFromString("WXActionSheetModule"))
         WXSDKEngine.registerComponent("richtext", with:  NSClassFromString("WXDivExtraComponent"))
         return true
     }

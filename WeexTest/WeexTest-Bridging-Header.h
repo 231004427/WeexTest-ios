@@ -5,3 +5,4 @@
 #import "WXTitleBarModule.h"
 #import "WXNavigationHandlerImpl.h"
 #import "WXDivExtraComponent.h"
+#import "WXActionSheetModule.h"
