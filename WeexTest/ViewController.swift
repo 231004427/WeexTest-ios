@@ -67,13 +67,15 @@ class ViewController: UIViewController {
         weexHeight = self.view.frame.size.height - top!;
         //右侧按钮
         buildRightItem(title: rTitle, color: rColor, tag: rTag, img: rImg)
+        reload()
+    }
+    func reload(){
         if isCatch {
             //JS版本判断
             getJSBundle()
         }else{
             render()
         }
-        
     }
     func getJSBundle(){
         if isLoading {return}

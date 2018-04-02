@@ -17,6 +17,6 @@ public extension WXComModule {
     }
     @objc public func reload() {
         let vc=weexInstance.viewController as! ViewController
-        vc.getJSBundle()
+        vc.reload()
     }
 }

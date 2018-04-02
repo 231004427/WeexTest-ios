@@ -51,7 +51,7 @@ public extension WXTitleBarModule {
             button1.setBackgroundImage(UIImage(named: img!), for: UIControlState.normal)
             button1.isHighlighted=false
             button1.tag=(tag ?? 0)
-            //button1.titleLabel?.font = UIFont.systemFontOfSize(17)
+            //button1.titleLabel?.font = UIFont.sy/Users/sunlin/web/weex/incubator-weex/ios/playground/WeexDemo/UIViewController+WXDemoNaviBar.mstemFontOfSize(17)
             button1.addTarget(self,action:#selector(onclick(_:)),for:.touchUpInside)
             let barButton1 = UIBarButtonItem(customView: button1)
             vc.navigationItem.rightBarButtonItems=[barButton1]
