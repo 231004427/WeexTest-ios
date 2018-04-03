@@ -33,6 +33,23 @@ public extension WXTitleBarModule {
         weexInstance.viewController.navigationController?.pushViewController(vc, animated: animated!)
     }
     
+    @objc public func setNavBarRightItem(_ param:NSDictionary,_ callback: WXModuleCallback?){
+        print("title:\(param["title"] ?? "")")//1=TXT,2=img
+        print("color:\(param["titleColor"] ?? "")")//1=TXT,2=img
+        print("tag:\(param["tag"] ?? "")")//1=TXT,2=img
+        print("img:\(param["img"] ?? "")")//1=TXT,2=img
+        
+        //右侧按钮
+        let title=param["title"] as? String
+        let color=param["color"] as? String
+        let tag=param["tag"] as? Int
+        let img=param["img"] as? String
+        
+        setRightItem(vc:weexInstance.viewController,title: title, color: color, tag: tag, img: img)
+
+        let data=["result":"ok"] as [String : Any]
+        callback?(data)
+    }
     func setRightItem(vc:UIViewController,title:String?,color:String?,tag:Int?,img:String?){
         if title==nil && img==nil {return}
         if img == nil {
@@ -56,24 +73,6 @@ public extension WXTitleBarModule {
             let barButton1 = UIBarButtonItem(customView: button1)
             vc.navigationItem.rightBarButtonItems=[barButton1]
         }
-    }
-    
-    @objc public func setNavBarRightItem(_ param:NSDictionary,_ callback: WXModuleCallback?){
-        print("title:\(param["title"] ?? "")")//1=TXT,2=img
-        print("color:\(param["titleColor"] ?? "")")//1=TXT,2=img
-        print("tag:\(param["tag"] ?? "")")//1=TXT,2=img
-        print("img:\(param["img"] ?? "")")//1=TXT,2=img
-        
-        //右侧按钮
-        let title=param["title"] as? String
-        let color=param["color"] as? String
-        let tag=param["tag"] as? Int
-        let img=param["img"] as? String
-        
-        setRightItem(vc:weexInstance.viewController,title: title, color: color, tag: tag, img: img)
-
-        let data=["result":"ok"] as [String : Any]
-        callback?(data)
     }
     @objc func onclick(_ obj:UIButton){
         WXSDKManager.bridgeMgr().fireEvent(weexInstance?.instanceId, ref: WX_SDK_ROOT_REF, type: "navclick", params: ["tag":obj.tag], domChanges: nil)

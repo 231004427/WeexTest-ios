@@ -19,4 +19,22 @@ public extension WXComModule {
         let vc=weexInstance.viewController as! ViewController
         vc.reload()
     }
+    @objc public func getHeight(_ param:NSDictionary,_ callback: WXModuleCallback?) {
+        
+        
+        let statusheight = UIApplication.shared.statusBarFrame.size.height*UIScreen.main.scale
+        let navigationheight = weexInstance.viewController.navigationController!.navigationBar.frame.size.height*UIScreen.main.scale
+        
+        
+        let data=["barHeight":navigationheight,
+                  "statusHeight":statusheight,
+                  "topHeight":statusheight+navigationheight] as [String : Any]
+        
+        callback?(data)
+    }
+    @objc public func getToken(_ param:NSDictionary,_ callback: WXModuleCallback?) {
+        print("printLog:\(param["name"] ?? "")")
+        let data=["token":"178b583ea44264c38df1e9ebe2900868"] as [String : Any]
+        callback?(data)
+    }
 }

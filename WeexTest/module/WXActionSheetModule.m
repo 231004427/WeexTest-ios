@@ -64,8 +64,6 @@ WX_EXPORT_METHOD(@selector(create:callback:))
         }];
         [alert addAction:action];
     }
-    
-    
     [[[UIApplication sharedApplication] keyWindow] endEditing:YES];  //hide keyboard
     UIWindow *window = [UIApplication sharedApplication].keyWindow;
     [window.rootViewController presentViewController:alert animated:YES completion:nil];

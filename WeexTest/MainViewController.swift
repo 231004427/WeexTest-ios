@@ -36,7 +36,7 @@ class MainViewController: UIViewController {
                     defaults.set(urlStr, forKey: "weexurl")
                     defaults.synchronize();
                     vc.url=urlStr
-                    vc.setRightItem(title: "刷新")
+                    vc.setRightItem(title: "使用规则")
                 }
             default: break
             }
