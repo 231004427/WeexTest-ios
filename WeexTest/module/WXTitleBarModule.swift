@@ -22,8 +22,6 @@ public extension WXTitleBarModule {
         vc.setUrl(url: param["url"] as! String)
         vc.hidesBottomBarWhenPushed=true
         vc.navigationItem.title=param["title"] as? String
-        
-        
         //右侧按钮
         let rTitle=param["rTitle"] as? String
         let rColor=param["rColor"] as? String
@@ -83,5 +81,10 @@ public extension WXTitleBarModule {
             animated=true
         }
         weexInstance.viewController.navigationController?.popViewController(animated: animated!)
+    }
+    @objc func setTitle(_ param:NSDictionary,_ callback: WXModuleCallback?){
+        weexInstance.viewController.navigationItem.title=param["title"] as? String
+        let data=["result":"ok"] as [String : Any]
+        callback?(data)
     }
 }
