@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     /////////////////////
     var isCatch=false
     /////////////////////
-    var isGet=true
+    var isGet=false
     var isLoading=false;
    let restConn=RestConn()
     var weexJSVesion:WeexJSVesion!
@@ -65,11 +65,15 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         top=64
         weexHeight = self.view.frame.size.height - top!;
+        //
+        let defaults = UserDefaults.standard
+        isCatch=defaults.bool(forKey: "isCatch")
         //右侧按钮
         buildRightItem(title: rTitle, color: rColor, tag: rTag, img: rImg)
         reload()
     }
     func reload(){
+        //是否走缓存
         if isCatch {
             //JS版本判断
             getJSBundle()
@@ -83,10 +87,12 @@ class ViewController: UIViewController {
         //版本地址
         var urlVesion=url
         var num=url.positionOf(sub: "/", backwards: true)
-        for c in "v/v." {
-            num+=1
-            urlVesion.insert(c, at:url.index(url.startIndex, offsetBy:num))
-        }
+        //dist/test/index.weex.js,dist/v/v.index.weex.js
+        var fileName=url.subString(start: num+1, length: url.count-num-1)
+        num=url.positionOf(sub: "dist", backwards: true)
+        var filePath=url.subString(start: 0, length: num)
+        
+        urlVesion=filePath+"dist/v/v."+fileName;
         //获取版本信息
         restConn.restDelegate=self
         restConn.get(urlStr: urlVesion)
@@ -103,10 +109,10 @@ class ViewController: UIViewController {
             
             if (state == WXState.WeexInstanceAppear) {
                 
-                WXSDKManager.bridgeMgr().fireEvent(instance?.instanceId, ref: WX_SDK_ROOT_REF, type: "viewappear", params: ["haha":123], domChanges: nil)
+                WXSDKManager.bridgeMgr().fireEvent(instance?.instanceId, ref: WX_SDK_ROOT_REF, type: "viewstart", params: ["test":123], domChanges: nil)
             }
             else if (state == WXState.WeexInstanceDisappear) {
-                WXSDKManager.bridgeMgr().fireEvent(instance?.instanceId, ref: WX_SDK_ROOT_REF, type: "viewdisappear", params: nil, domChanges: nil)
+                WXSDKManager.bridgeMgr().fireEvent(instance?.instanceId, ref: WX_SDK_ROOT_REF, type: "viewstop", params: nil, domChanges: nil)
             }
         }
     }
@@ -176,6 +182,7 @@ class ViewController: UIViewController {
         if !fileManager.fileExists(atPath: filePath) {
             isGet=true
         }
+        isGet=true
         if isGet {
             isLoading=true
             restConn.get(urlStr: url)
@@ -205,7 +212,7 @@ extension ViewController:RestConnDelegate {
             isLoading=false
         }else{
             weexJSVesion=WeexJSVesion(jsonStr: response!)
-            if weexJSVesion != nil {
+            if weexJSVesion != nil && weexJSVesion.md5 != "" {
                 //获取本地版本
                 if let vesion=SharedData.getValue(key: weexJSVesion.fileName) {
                 if weexJSVesion.md5==vesion {
@@ -222,6 +229,9 @@ extension ViewController:RestConnDelegate {
                 }
                 isLoading=false
                 down()
+            }else{
+                isCatch=false
+                 render()
             }
         }
     }

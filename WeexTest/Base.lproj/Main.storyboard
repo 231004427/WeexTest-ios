@@ -34,18 +34,35 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="58E-sD-Lwd">
+                                <rect key="frame" x="163" y="371" width="51" height="31"/>
+                                <connections>
+                                    <action selector="clickSwitch:" destination="2xb-2H-ZUz" eventType="valueChanged" id="SKw-Yc-vQ5"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="开启缓存" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0L-60-VOF">
+                                <rect key="frame" x="220" y="376" width="70" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="e0L-60-VOF" firstAttribute="centerY" secondItem="58E-sD-Lwd" secondAttribute="centerY" id="1QE-hI-bj8"/>
                             <constraint firstItem="RwA-Yj-NBa" firstAttribute="centerX" secondItem="B9n-p9-2tP" secondAttribute="centerX" constant="13.5" id="3oN-3L-t7F"/>
+                            <constraint firstItem="58E-sD-Lwd" firstAttribute="centerX" secondItem="Ckm-J4-z7l" secondAttribute="centerX" id="9kF-r5-EVY"/>
                             <constraint firstItem="B9n-p9-2tP" firstAttribute="centerY" secondItem="Ckm-J4-z7l" secondAttribute="centerY" id="KgA-ze-XaU"/>
+                            <constraint firstItem="58E-sD-Lwd" firstAttribute="top" secondItem="B9n-p9-2tP" secondAttribute="bottom" constant="23" id="QL1-XQ-srV"/>
                             <constraint firstItem="B9n-p9-2tP" firstAttribute="centerX" secondItem="Ckm-J4-z7l" secondAttribute="centerX" id="YQV-DH-kk0"/>
+                            <constraint firstItem="e0L-60-VOF" firstAttribute="leading" secondItem="58E-sD-Lwd" secondAttribute="trailing" constant="8" id="Z4b-Eo-vK8"/>
                             <constraint firstItem="RwA-Yj-NBa" firstAttribute="top" secondItem="xp6-qQ-O6x" secondAttribute="top" constant="184" id="eJk-Up-WNv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xp6-qQ-O6x"/>
                     </view>
                     <navigationItem key="navigationItem" id="xRc-Lg-qqE"/>
                     <connections>
+                        <outlet property="uiSwitch" destination="58E-sD-Lwd" id="sIv-dG-BHJ"/>
                         <outlet property="urlTextFileld" destination="RwA-Yj-NBa" id="ViU-05-cah"/>
                     </connections>
                 </viewController>
