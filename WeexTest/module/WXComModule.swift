@@ -19,6 +19,7 @@ public extension WXComModule {
         let vc=weexInstance.viewController as! ViewController
         vc.reload()
     }
+    //获取状态栏+导航栏高度
     @objc public func getHeight(_ param:NSDictionary,_ callback: WXModuleCallback?) {
         
         
@@ -32,11 +33,13 @@ public extension WXComModule {
         
         callback?(data)
     }
+    //获取当前用户Token
     @objc public func getToken(_ param:NSDictionary,_ callback: WXModuleCallback?) {
         print("printLog:\(param["name"] ?? "")")
         let data=["token":"178b583ea44264c38df1e9ebe2900868"] as [String : Any]
         callback?(data)
     }
+    //原生窗口挑战
     @objc public func goActivity(_ param:NSDictionary,_ callback: WXModuleCallback?) {
         print("printLog:\(param["type"] ?? "")")
         //type==1跳到订货中心页

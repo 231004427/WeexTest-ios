@@ -27,9 +27,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         WXSDKEngine.registerHandler(WxImageDownloader(), with: WXImgLoaderProtocol.self)
         WXSDKEngine.registerHandler(WXNavigationHandlerImpl(), with: WXNavigationProtocol.self)
         WXSDKEngine.registerHandler(WXWebSocketHandlerImpl(), with: WXWebSocketHandler.self)
+        WXSDKEngine.registerModule("modalSheet", with: NSClassFromString("WXModalSheetModule"))
         WXSDKEngine.registerModule("ComModule", with: NSClassFromString("WXComModule"))
         WXSDKEngine.registerModule("titleBar", with: NSClassFromString("WXTitleBarModule"))
         WXSDKEngine.registerModule("actionSheet", with: NSClassFromString("WXActionSheetModule"))
+        WXSDKEngine.registerModule("pickerSheet", with: NSClassFromString("WXPickerSheetModule"))
         WXSDKEngine.registerComponent("richtext", with:  NSClassFromString("WXDivExtraComponent"))
         return true
     }

@@ -7,7 +7,6 @@
 //
 
 #import "WXComModule.h"
-#import "WeexTest-Swift.h"
 @implementation WXComModule
 @synthesize weexInstance;
 #pragma clang diagnostic push //关闭unknow selector的warrning

@@ -24,6 +24,8 @@
 		BB3BF0572046B63E00F3A520 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB3BF0552046B63E00F3A520 /* LaunchScreen.storyboard */; };
 		BB3BF0622046B63F00F3A520 /* WeexTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BF0612046B63F00F3A520 /* WeexTestTests.swift */; };
 		BB3BF06D2046B63F00F3A520 /* WeexTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB3BF06C2046B63F00F3A520 /* WeexTestUITests.swift */; };
+		BB4E2A28207B37DF00E7F961 /* SelectPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E2A27207B37DF00E7F961 /* SelectPickerView.swift */; };
+		BB4E2A2A207B38AC00E7F961 /* MylineUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4E2A29207B38AC00E7F961 /* MylineUIView.swift */; };
 		BB7C3A8720661C0700894A6F /* RestConn.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C3A8620661C0700894A6F /* RestConn.swift */; };
 		BB7C3A8A2066212800894A6F /* JSONP.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C3A882066212800894A6F /* JSONP.swift */; };
 		BB7C3A8B2066212800894A6F /* JSONHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB7C3A892066212800894A6F /* JSONHelp.swift */; };
@@ -32,6 +34,13 @@
 		BB94EE1B205CB32E00214885 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB94EE1A205CB32E00214885 /* MainViewController.swift */; };
 		BB9B378520490E9B00A324B1 /* WxImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9B378420490E9B00A324B1 /* WxImageDownloader.swift */; };
 		BB9B431D205E39C500CB0A02 /* WXWebSocketHandlerImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9B431C205E39C500CB0A02 /* WXWebSocketHandlerImpl.swift */; };
+		BB9EC6F5207AF10F007C1D54 /* WXModalSheetModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9EC6F4207AF10F007C1D54 /* WXModalSheetModule.m */; };
+		BB9EC6F8207AF13B007C1D54 /* WXModalSheetModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EC6F7207AF13B007C1D54 /* WXModalSheetModule.swift */; };
+		BB9EC6FD207B03DF007C1D54 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9EC6FC207B03DF007C1D54 /* MBProgressHUD.m */; };
+		BB9EC6FF207B0419007C1D54 /* MyProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EC6FE207B0419007C1D54 /* MyProgressHUD.swift */; };
+		BB9EC701207B2341007C1D54 /* MyAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EC700207B2341007C1D54 /* MyAlertController.swift */; };
+		BB9EC703207B2AEB007C1D54 /* WXPickerSheetModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9EC702207B2AEB007C1D54 /* WXPickerSheetModule.swift */; };
+		BB9EC705207B2AFA007C1D54 /* WXPickerSheetModule.m in Sources */ = {isa = PBXBuildFile; fileRef = BB9EC704207B2AFA007C1D54 /* WXPickerSheetModule.m */; };
 		BBA354F320649656001EF60F /* WXTitleBarModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA354F220649656001EF60F /* WXTitleBarModule.swift */; };
 		BBA354F52064A8B3001EF60F /* SwiftColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA354F42064A8B3001EF60F /* SwiftColors.swift */; };
 		BBBA57D1205AA6E9003B6F68 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBBA57D0205AA6E9003B6F68 /* String.swift */; };
@@ -91,6 +100,8 @@
 		BB3BF0682046B63F00F3A520 /* WeexTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeexTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB3BF06C2046B63F00F3A520 /* WeexTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeexTestUITests.swift; sourceTree = "<group>"; };
 		BB3BF06E2046B63F00F3A520 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB4E2A27207B37DF00E7F961 /* SelectPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPickerView.swift; sourceTree = "<group>"; };
+		BB4E2A29207B38AC00E7F961 /* MylineUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MylineUIView.swift; sourceTree = "<group>"; };
 		BB7C3A8620661C0700894A6F /* RestConn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestConn.swift; sourceTree = "<group>"; };
 		BB7C3A882066212800894A6F /* JSONP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONP.swift; sourceTree = "<group>"; };
 		BB7C3A892066212800894A6F /* JSONHelp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONHelp.swift; sourceTree = "<group>"; };
@@ -99,6 +110,16 @@
 		BB94EE1A205CB32E00214885 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		BB9B378420490E9B00A324B1 /* WxImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WxImageDownloader.swift; sourceTree = "<group>"; };
 		BB9B431C205E39C500CB0A02 /* WXWebSocketHandlerImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXWebSocketHandlerImpl.swift; sourceTree = "<group>"; };
+		BB9EC6F4207AF10F007C1D54 /* WXModalSheetModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXModalSheetModule.m; sourceTree = "<group>"; };
+		BB9EC6F6207AF129007C1D54 /* WXModalSheetModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXModalSheetModule.h; sourceTree = "<group>"; };
+		BB9EC6F7207AF13B007C1D54 /* WXModalSheetModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXModalSheetModule.swift; sourceTree = "<group>"; };
+		BB9EC6FB207B03DF007C1D54 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		BB9EC6FC207B03DF007C1D54 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		BB9EC6FE207B0419007C1D54 /* MyProgressHUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProgressHUD.swift; sourceTree = "<group>"; };
+		BB9EC700207B2341007C1D54 /* MyAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyAlertController.swift; sourceTree = "<group>"; };
+		BB9EC702207B2AEB007C1D54 /* WXPickerSheetModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXPickerSheetModule.swift; sourceTree = "<group>"; };
+		BB9EC704207B2AFA007C1D54 /* WXPickerSheetModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WXPickerSheetModule.m; sourceTree = "<group>"; };
+		BB9EC706207B2B04007C1D54 /* WXPickerSheetModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WXPickerSheetModule.h; sourceTree = "<group>"; };
 		BBA354F220649656001EF60F /* WXTitleBarModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WXTitleBarModule.swift; sourceTree = "<group>"; };
 		BBA354F42064A8B3001EF60F /* SwiftColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftColors.swift; sourceTree = "<group>"; };
 		BBBA57D0205AA6E9003B6F68 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
@@ -185,6 +206,7 @@
 		BB3BF04B2046B63E00F3A520 /* WeexTest */ = {
 			isa = PBXGroup;
 			children = (
+				BB9EC6F9207B03C0007C1D54 /* common */,
 				BB2D848C205B5983000E91ED /* ios_app.png */,
 				BBFA1261205166190071C135 /* handler */,
 				BBFA125D20514BD20071C135 /* module */,
@@ -226,6 +248,27 @@
 			path = WeexTestUITests;
 			sourceTree = "<group>";
 		};
+		BB9EC6F9207B03C0007C1D54 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				BB9EC6FA207B03DF007C1D54 /* MBProgressHUD */,
+				BB9EC700207B2341007C1D54 /* MyAlertController.swift */,
+				BB4E2A27207B37DF00E7F961 /* SelectPickerView.swift */,
+				BB4E2A29207B38AC00E7F961 /* MylineUIView.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		BB9EC6FA207B03DF007C1D54 /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				BB9EC6FE207B0419007C1D54 /* MyProgressHUD.swift */,
+				BB9EC6FB207B03DF007C1D54 /* MBProgressHUD.h */,
+				BB9EC6FC207B03DF007C1D54 /* MBProgressHUD.m */,
+			);
+			path = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		BBFA125D20514BD20071C135 /* module */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +283,12 @@
 				BBA354F220649656001EF60F /* WXTitleBarModule.swift */,
 				BB04B550206D0A2700C6AF10 /* WXActionSheetModule.h */,
 				BB04B551206D0A6000C6AF10 /* WXActionSheetModule.m */,
+				BB9EC6F4207AF10F007C1D54 /* WXModalSheetModule.m */,
+				BB9EC6F6207AF129007C1D54 /* WXModalSheetModule.h */,
+				BB9EC6F7207AF13B007C1D54 /* WXModalSheetModule.swift */,
+				BB9EC702207B2AEB007C1D54 /* WXPickerSheetModule.swift */,
+				BB9EC704207B2AFA007C1D54 /* WXPickerSheetModule.m */,
+				BB9EC706207B2B04007C1D54 /* WXPickerSheetModule.h */,
 			);
 			path = module;
 			sourceTree = "<group>";
@@ -558,12 +607,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB2D8490205B6823000E91ED /* WXURLRewrite.swift in Sources */,
+				BB9EC6F5207AF10F007C1D54 /* WXModalSheetModule.m in Sources */,
 				BB94EE1B205CB32E00214885 /* MainViewController.swift in Sources */,
 				BB1F1862204A39EA0066F7D8 /* WXComModule.m in Sources */,
+				BB9EC703207B2AEB007C1D54 /* WXPickerSheetModule.swift in Sources */,
+				BB9EC701207B2341007C1D54 /* MyAlertController.swift in Sources */,
+				BB9EC6FF207B0419007C1D54 /* MyProgressHUD.swift in Sources */,
 				BB7C3A8720661C0700894A6F /* RestConn.swift in Sources */,
+				BB4E2A28207B37DF00E7F961 /* SelectPickerView.swift in Sources */,
+				BB9EC705207B2AFA007C1D54 /* WXPickerSheetModule.m in Sources */,
 				BB04B552206D0A6000C6AF10 /* WXActionSheetModule.m in Sources */,
 				BB9B378520490E9B00A324B1 /* WxImageDownloader.swift in Sources */,
 				BB3BF04F2046B63E00F3A520 /* ViewController.swift in Sources */,
+				BB4E2A2A207B38AC00E7F961 /* MylineUIView.swift in Sources */,
 				BB3BF04D2046B63E00F3A520 /* AppDelegate.swift in Sources */,
 				BB7C3A8D2066214E00894A6F /* WeexJSVesion.swift in Sources */,
 				BB2D8492205B702D000E91ED /* CacheUtils.swift in Sources */,
@@ -573,11 +629,13 @@
 				BB1F1864204A3A3E0066F7D8 /* WXComModule.swift in Sources */,
 				BB7C3A8A2066212800894A6F /* JSONP.swift in Sources */,
 				BBA354F52064A8B3001EF60F /* SwiftColors.swift in Sources */,
+				BB9EC6FD207B03DF007C1D54 /* MBProgressHUD.m in Sources */,
 				BB7C3A8F2066241600894A6F /* SharedData.swift in Sources */,
 				BB7C3A8B2066212800894A6F /* JSONHelp.swift in Sources */,
 				BBBA57D1205AA6E9003B6F68 /* String.swift in Sources */,
 				BBA354F320649656001EF60F /* WXTitleBarModule.swift in Sources */,
 				BBFA126020514C120071C135 /* WXTitleBarModule.m in Sources */,
+				BB9EC6F8207AF13B007C1D54 /* WXModalSheetModule.swift in Sources */,
 				BB9B431D205E39C500CB0A02 /* WXWebSocketHandlerImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

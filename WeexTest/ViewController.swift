@@ -87,8 +87,12 @@ class ViewController: UIViewController {
         //版本地址
         var urlVesion=url
         var num=url.positionOf(sub: "/", backwards: true)
-        //dist/test/index.weex.js,dist/v/v.index.weex.js
-        var fileName=url.subString(start: num+1, length: url.count-num-1)
+        var end=url.positionOf(sub: "?", backwards: true)
+        if end == -1 {
+            end=url.count
+        }
+        //http://www.xxx.com/dist/test/index.weex.js,http://www.xxx.com/dist/v/v.index.weex.js
+        var fileName=url.subString(start: num+1, length: end-num-1)
         num=url.positionOf(sub: "dist", backwards: true)
         var filePath=url.subString(start: 0, length: num)
         

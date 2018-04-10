@@ -67,6 +67,7 @@ extension RestConn{
     //MARK: - Get方式
     func get(urlStr:String){
         
+        //urlStr=urlStr.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
         // 1、创建URL对象；
         let url:URL! = URL(string:urlStr);
         

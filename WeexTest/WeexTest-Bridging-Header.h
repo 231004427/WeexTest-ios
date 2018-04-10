@@ -6,3 +6,6 @@
 #import "WXNavigationHandlerImpl.h"
 #import "WXDivExtraComponent.h"
 #import "WXActionSheetModule.h"
+#import "WXModalSheetModule.h"
+#import "WXPickerSheetModule.h"
+#import "MBProgressHUD.h"
