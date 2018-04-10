@@ -7,9 +7,6 @@
 //
 
 import Foundation
-protocol SelectPickerViewDelegate: class {
-    func selectSure(index: Int?, value:String?)
-}
 class SelectPickerView:UIView{
     let backView = UIButton()
     var pickerView: UIPickerView?
@@ -23,7 +20,7 @@ class SelectPickerView:UIView{
     private let pickerHeight: CGFloat = 200
     private let viewHeight:CGFloat = 244
     var vd : [String : AnyObject] = [String : AnyObject]()
-    weak var delegate:SelectPickerViewDelegate?
+    var selectAction:((Int)->())?
     var select = 0
     var list:[String]!
     
@@ -48,25 +45,38 @@ class SelectPickerView:UIView{
     }
     @objc func sure(){
         select = pickerView!.selectedRow(inComponent: 0)
-        if delegate != nil {
-            delegate?.selectSure(index: select, value: list[select])
-        }
+        selectAction?(select)
         hide()
     }
-    class func addTo(superView:UIView) -> SelectPickerView{
+    class func addTo(superView:UIView,handler: ((Int) -> Swift.Void)? = nil) -> SelectPickerView{
         let pickerView = SelectPickerView(frame: CGRect(x: 0, y: 0, width: superView.frame.width, height: superView.frame.height))
+        pickerView.selectAction=handler
         superView.addSubview(pickerView)
         return pickerView
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor=UIColor.white
+        self.backgroundColor=UIColor(red: 0 / 255.0, green: 0 / 255.0, blue: 0 / 255.0, alpha: 0.5)
+        
+        //背景点击事件
+        self.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(hide))
+        tapGesture.numberOfTapsRequired = 1
+        tapGesture.delegate=self
+        self.addGestureRecognizer(tapGesture)
+        self.list=[]
         isHidden=true
-        list=["aaa","bbb","ccc"]
         loadBackView()
         loadTitleBar()
         loadLoadingView()
         loadPicker()
+    }
+    //加载数据
+    public func setItems(items:[String]?){
+        if items != nil {
+            self.list=items
+            pickerView?.reloadComponent(0)
+        }
     }
     //加载loading
     private func loadLoadingView(){
@@ -196,5 +206,13 @@ extension SelectPickerView: UIPickerViewDataSource {
         default:
             return 0
         }
+    }
+}
+extension SelectPickerView: UIGestureRecognizerDelegate{
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        if touch.view is UIButton{
+            return false
+        }
+        return true
     }
 }

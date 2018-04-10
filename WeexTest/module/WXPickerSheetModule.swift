@@ -18,9 +18,12 @@ public extension WXPickerSheetModule{
             print("\(item)")
         }
         
-        let pickerView=SelectPickerView.addTo(superView: weexInstance.viewController.view)
+        let pickerView=SelectPickerView.addTo(superView: (weexInstance.viewController.navigationController?.view)!){
+            index in
+            let data=["result":"success","data":index] as [String : Any]
+            callback?(data)
+        }
+        pickerView.setItems(items: items)
         pickerView.show()
-        let data=["index":1,"value":"sun"] as [String : Any]
-        callback?(data)
     }
 }
