@@ -39,12 +39,17 @@ public extension WXComModule {
         let data=["token":"178b583ea44264c38df1e9ebe2900868"] as [String : Any]
         callback?(data)
     }
-    //原生窗口挑战
+    //原生窗口跳转
     @objc public func goActivity(_ param:NSDictionary,_ callback: WXModuleCallback?) {
         print("printLog:\(param["type"] ?? "")")
         //type==1跳到订货中心页
         weexInstance.viewController.navigationController!.popToRootViewController(animated: true)
         
+        let data=["result":"ok"] as [String : Any]
+        callback?(data)
+    }
+    //
+    @objc public func upDate(_ param:NSDictionary,_ callback: WXModuleCallback?) {
         let data=["result":"ok"] as [String : Any]
         callback?(data)
     }

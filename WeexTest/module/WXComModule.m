@@ -16,6 +16,7 @@ WX_EXPORT_METHOD(@selector(printLog::)) //Swift 中定义的方法，XCode 转�
 WX_EXPORT_METHOD(@selector(getHeight::))
 WX_EXPORT_METHOD(@selector(getToken::))
 WX_EXPORT_METHOD(@selector(goActivity::))
+WX_EXPORT_METHOD(@selector(upDate::))
 WX_EXPORT_METHOD(@selector(reload))
 #pragma clang diagnostic pop
 
